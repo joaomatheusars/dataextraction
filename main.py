@@ -7,6 +7,7 @@ from datetime import date
 from db import DB
 import asyncio
 
+# Class Name Path
 NAME = ['sc-fdfabab6-6.jNQQeD']
 REGULARPRICE = ['regularPrice', 'sc-5492faee-1.ibyzkU.oldPrice',
                 'sc-5492faee-2.ipHrwP.finalPrice']
