@@ -49,16 +49,16 @@ class Kabum(Thread):
             if not pro["Nome"] == "":
                 self.product.append(pro)
 
-            # his = {
-            #     "dia": date.today().strftime("%d/%m/%Y"),
-            #     "preco": self.find_data(REGULARPRICE),
-            #     "avista": self.find_data(PRICE),
-            #     "parcelado": self.find_data(PARCELS),
-            #     "productId": int(i),
-            # }
+            his = {
+                "dia": date.today().strftime("%d/%m/%Y"),
+                "preco": self.find_data(REGULARPRICE),
+                "avista": self.find_data(PRICE),
+                "parcelado": self.find_data(PARCELS),
+                "productId": int(i),
+            }
 
-            # if not his['preco'] == "" and not his['avista'] == "":
-            #     self.historic_product.append(his)
+            if not his['preco'] == "" and not his['avista'] == "":
+                self.historic_product.append(his)
 
         self.driver.close()
 
@@ -90,7 +90,7 @@ def main():
 
         if len(products) > 10:
             asyncio.run(DB.create_product(products))
-            # asyncio.run(DB.create_historic_product(historic_products))
+            asyncio.run(DB.create_historic_product(historic_products))
             products.clear()
             historic_products.clear()
 
